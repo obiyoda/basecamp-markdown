@@ -122,10 +122,27 @@
     });
   }
 
+  // Set up Turbo/Hotwire event listeners
+  function setupTurboListeners() {
+    // Turbo Drive events
+    document.addEventListener('turbo:load', processAllPres);
+    document.addEventListener('turbo:render', processAllPres);
+
+    // Turbo Frames
+    document.addEventListener('turbo:frame-load', processAllPres);
+    document.addEventListener('turbo:frame-render', processAllPres);
+
+    // Turbo Streams
+    document.addEventListener('turbo:before-stream-render', function() {
+      setTimeout(processAllPres, 50);
+    });
+  }
+
   // Initialize
   function init() {
     processAllPres();
     setupObserver();
+    setupTurboListeners();
   }
 
   // Run when DOM is ready
