@@ -4,6 +4,16 @@ A Chrome extension that renders markdown content inside Basecamp code blocks as 
 
 Since Basecamp doesn't natively support markdown, this extension lets you write markdown in code blocks (using the Trix editor's preformatted text) and have it rendered as properly formatted content.
 
+## Screenshots
+
+**Edit Mode** - Write markdown in a code block:
+
+![Edit Mode](edit.png)
+
+**Preview Mode** - Automatically rendered with syntax highlighting:
+
+![Preview Mode](preview.png)
+
 ## Features
 
 - **Auto-detection**: Automatically finds and renders markdown in `<pre>` tags
