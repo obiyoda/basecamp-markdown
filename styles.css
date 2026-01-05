@@ -1,8 +1,53 @@
 /* Basecamp Markdown Renderer Styles */
 
-/* Rendered markdown container */
-.md-rendered {
+/* Main container */
+.md-container {
+  position: relative;
+  margin: 8px 0;
+}
+
+/* Toolbar */
+.md-toolbar {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.md-toolbar:last-of-type {
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.md-btn {
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  border: 1px solid #d0d7de;
+  border-radius: 4px;
+  background-color: #f6f8fa;
+  color: #24292f;
   cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.md-btn:hover {
+  background-color: #e8ebef;
+  border-color: #c0c7cf;
+}
+
+.md-btn:active {
+  background-color: #d8dce0;
+}
+
+.md-btn-success {
+  background-color: #2da44e !important;
+  border-color: #2da44e !important;
+  color: #fff !important;
+}
+
+/* Rendered markdown content */
+.md-rendered {
   padding: 12px 16px;
   background-color: #fafbfc;
   border: 1px solid #e1e4e8;
@@ -11,24 +56,15 @@
   font-size: 14px;
   line-height: 1.6;
   color: #24292e;
-  transition: border-color 0.2s ease;
-}
-
-.md-rendered:hover {
-  border-color: #0366d6;
 }
 
 /* Raw markdown (pre element when toggled to show) */
 .md-raw {
-  cursor: pointer;
   background-color: #f6f8fa !important;
   border: 1px solid #e1e4e8 !important;
   border-radius: 6px !important;
   padding: 12px 16px !important;
-}
-
-.md-raw:hover {
-  border-color: #0366d6 !important;
+  margin: 0 !important;
 }
 
 /* Typography */
@@ -228,23 +264,30 @@
 
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
+  .md-btn {
+    background-color: #21262d;
+    border-color: #30363d;
+    color: #c9d1d9;
+  }
+
+  .md-btn:hover {
+    background-color: #30363d;
+    border-color: #484f58;
+  }
+
+  .md-btn:active {
+    background-color: #3a424a;
+  }
+
   .md-rendered {
     background-color: #21262d;
     border-color: #30363d;
     color: #c9d1d9;
   }
 
-  .md-rendered:hover {
-    border-color: #58a6ff;
-  }
-
   .md-raw {
     background-color: #161b22 !important;
     border-color: #30363d !important;
-  }
-
-  .md-raw:hover {
-    border-color: #58a6ff !important;
   }
 
   .md-rendered h1,

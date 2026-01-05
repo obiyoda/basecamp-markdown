@@ -17,7 +17,7 @@ Since Basecamp doesn't natively support markdown, this extension lets you write 
 ## Features
 
 - **Auto-detection**: Automatically finds and renders markdown in `<pre>` tags
-- **Click to toggle**: Click rendered content to see raw markdown, click again to re-render
+- **Toolbar controls**: Toggle between rendered/raw view, copy markdown to clipboard
 - **Dark mode support**: Respects system dark/light mode preferences
 - **Extended markdown**: Supports GitHub Flavored Markdown including:
   - Headers
