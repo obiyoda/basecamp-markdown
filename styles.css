@@ -1,0 +1,298 @@
+/* Basecamp Markdown Renderer Styles */
+
+/* Rendered markdown container */
+.md-rendered {
+  cursor: pointer;
+  padding: 12px 16px;
+  background-color: #fafbfc;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #24292e;
+  transition: border-color 0.2s ease;
+}
+
+.md-rendered:hover {
+  border-color: #0366d6;
+}
+
+/* Raw markdown (pre element when toggled to show) */
+.md-raw {
+  cursor: pointer;
+  background-color: #f6f8fa !important;
+  border: 1px solid #e1e4e8 !important;
+  border-radius: 6px !important;
+  padding: 12px 16px !important;
+}
+
+.md-raw:hover {
+  border-color: #0366d6 !important;
+}
+
+/* Typography */
+.md-rendered h1,
+.md-rendered h2,
+.md-rendered h3,
+.md-rendered h4,
+.md-rendered h5,
+.md-rendered h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: #24292e;
+}
+
+.md-rendered h1:first-child,
+.md-rendered h2:first-child,
+.md-rendered h3:first-child {
+  margin-top: 0;
+}
+
+.md-rendered h1 { font-size: 2em; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+.md-rendered h2 { font-size: 1.5em; border-bottom: 1px solid #eaecef; padding-bottom: 0.3em; }
+.md-rendered h3 { font-size: 1.25em; }
+.md-rendered h4 { font-size: 1em; }
+.md-rendered h5 { font-size: 0.875em; }
+.md-rendered h6 { font-size: 0.85em; color: #6a737d; }
+
+/* Paragraphs */
+.md-rendered p {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.md-rendered p:last-child {
+  margin-bottom: 0;
+}
+
+/* Links */
+.md-rendered a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.md-rendered a:hover {
+  text-decoration: underline;
+}
+
+/* Bold and italic */
+.md-rendered strong {
+  font-weight: 600;
+}
+
+.md-rendered em {
+  font-style: italic;
+}
+
+/* Lists */
+.md-rendered ul,
+.md-rendered ol {
+  padding-left: 2em;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.md-rendered ul {
+  list-style-type: disc;
+}
+
+.md-rendered ol {
+  list-style-type: decimal;
+}
+
+.md-rendered li {
+  margin-bottom: 4px;
+}
+
+.md-rendered li > p {
+  margin-bottom: 8px;
+}
+
+.md-rendered ul ul,
+.md-rendered ol ol,
+.md-rendered ul ol,
+.md-rendered ol ul {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+/* Task lists */
+.md-rendered input[type="checkbox"] {
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Blockquotes */
+.md-rendered blockquote {
+  margin: 0 0 16px 0;
+  padding: 0 16px;
+  color: #6a737d;
+  border-left: 4px solid #dfe2e5;
+}
+
+.md-rendered blockquote > p:last-child {
+  margin-bottom: 0;
+}
+
+/* Code */
+.md-rendered code {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 85%;
+  background-color: rgba(27, 31, 35, 0.05);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+.md-rendered pre {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 85%;
+  background-color: #f6f8fa;
+  border-radius: 6px;
+  padding: 16px;
+  overflow: auto;
+  line-height: 1.45;
+  margin-bottom: 16px;
+}
+
+.md-rendered pre code {
+  background-color: transparent;
+  padding: 0;
+  font-size: 100%;
+}
+
+/* Tables */
+.md-rendered table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-bottom: 16px;
+  width: 100%;
+  overflow: auto;
+}
+
+.md-rendered table th,
+.md-rendered table td {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+
+.md-rendered table th {
+  font-weight: 600;
+  background-color: #f6f8fa;
+}
+
+.md-rendered table tr {
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
+}
+
+.md-rendered table tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+
+/* Horizontal rule */
+.md-rendered hr {
+  height: 0.25em;
+  padding: 0;
+  margin: 24px 0;
+  background-color: #e1e4e8;
+  border: 0;
+}
+
+/* Images */
+.md-rendered img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Strikethrough */
+.md-rendered del {
+  text-decoration: line-through;
+  color: #6a737d;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .md-rendered {
+    background-color: #21262d;
+    border-color: #30363d;
+    color: #c9d1d9;
+  }
+
+  .md-rendered:hover {
+    border-color: #58a6ff;
+  }
+
+  .md-raw {
+    background-color: #161b22 !important;
+    border-color: #30363d !important;
+  }
+
+  .md-raw:hover {
+    border-color: #58a6ff !important;
+  }
+
+  .md-rendered h1,
+  .md-rendered h2,
+  .md-rendered h3,
+  .md-rendered h4,
+  .md-rendered h5,
+  .md-rendered h6 {
+    color: #c9d1d9;
+  }
+
+  .md-rendered h1,
+  .md-rendered h2 {
+    border-bottom-color: #21262d;
+  }
+
+  .md-rendered h6 {
+    color: #8b949e;
+  }
+
+  .md-rendered a {
+    color: #58a6ff;
+  }
+
+  .md-rendered blockquote {
+    color: #8b949e;
+    border-left-color: #3b434b;
+  }
+
+  .md-rendered code {
+    background-color: rgba(110, 118, 129, 0.4);
+  }
+
+  .md-rendered pre {
+    background-color: #161b22;
+  }
+
+  .md-rendered table th,
+  .md-rendered table td {
+    border-color: #30363d;
+  }
+
+  .md-rendered table th {
+    background-color: #161b22;
+  }
+
+  .md-rendered table tr {
+    background-color: #0d1117;
+    border-top-color: #21262d;
+  }
+
+  .md-rendered table tr:nth-child(2n) {
+    background-color: #161b22;
+  }
+
+  .md-rendered hr {
+    background-color: #21262d;
+  }
+
+  .md-rendered del {
+    color: #8b949e;
+  }
+}
