@@ -43,6 +43,9 @@
   function renderMarkdown(preElement) {
     if (preElement.getAttribute(PROCESSED_ATTR)) return;
 
+    // Skip pre elements inside trix-editor (edit mode)
+    if (preElement.closest('trix-editor')) return;
+
     const originalContent = preElement.textContent;
 
     if (!looksLikeMarkdown(originalContent)) return;
@@ -56,6 +59,11 @@
     wrapper.className = RENDERED_CLASS;
     wrapper.innerHTML = marked.parse(originalContent);
     wrapper.title = 'Click to toggle raw markdown';
+
+    // Apply syntax highlighting to code blocks
+    wrapper.querySelectorAll('pre code').forEach(function(block) {
+      hljs.highlightElement(block);
+    });
 
     // Hide the original pre and insert rendered content
     preElement.style.display = 'none';

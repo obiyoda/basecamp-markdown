@@ -137,30 +137,42 @@
   margin-bottom: 0;
 }
 
-/* Code */
+/* Inline code */
 .md-rendered code {
   font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
   font-size: 85%;
-  background-color: rgba(27, 31, 35, 0.05);
+  background-color: rgba(27, 31, 35, 0.08);
   padding: 0.2em 0.4em;
-  border-radius: 3px;
+  border-radius: 4px;
+  color: #24292e;
 }
 
+/* Code blocks */
 .md-rendered pre {
   font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-  font-size: 85%;
+  font-size: 13px;
   background-color: #f6f8fa;
+  border: 1px solid #e1e4e8;
   border-radius: 6px;
   padding: 16px;
   overflow: auto;
-  line-height: 1.45;
+  line-height: 1.5;
   margin-bottom: 16px;
 }
 
 .md-rendered pre code {
   background-color: transparent;
   padding: 0;
-  font-size: 100%;
+  font-size: inherit;
+  color: inherit;
+  border: none;
+  border-radius: 0;
+}
+
+/* Ensure hljs styles don't break layout */
+.md-rendered pre code.hljs {
+  padding: 0;
+  background: transparent;
 }
 
 /* Tables */
@@ -264,10 +276,16 @@
 
   .md-rendered code {
     background-color: rgba(110, 118, 129, 0.4);
+    color: #c9d1d9;
   }
 
   .md-rendered pre {
     background-color: #161b22;
+    border-color: #30363d;
+  }
+
+  .md-rendered pre code {
+    color: #c9d1d9;
   }
 
   .md-rendered table th,

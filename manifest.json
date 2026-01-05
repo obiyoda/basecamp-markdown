@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Basecamp Markdown Renderer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Renders markdown content inside Basecamp code blocks as formatted HTML",
   "permissions": [],
   "host_permissions": [
@@ -10,8 +10,8 @@
   "content_scripts": [
     {
       "matches": ["https://*.basecamp.com/*"],
-      "js": ["lib/marked.min.js", "content.js"],
-      "css": ["styles.css"],
+      "js": ["lib/marked.min.js", "lib/highlight.min.js", "content.js"],
+      "css": ["styles.css", "lib/highlight-theme.css"],
       "run_at": "document_idle"
     }
   ],
